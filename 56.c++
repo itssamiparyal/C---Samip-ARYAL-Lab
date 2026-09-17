@@ -62,7 +62,7 @@ int main()
         cout << "Customer Name: ";
         cin >> name;
 
-        cout << "Loan Amount: ";
+        cout << "Loan Amunt: ";
         cin >> amount;
 
         cout << "Interest Rate: ";

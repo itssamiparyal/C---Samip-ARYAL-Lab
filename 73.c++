@@ -1,5 +1,4 @@
-//Demonstrate the this Pointer Using a Student Class
-//Lab: Demonstrate the this pointer using a Student class.
+// Lab: Demonstrate the this pointer using a Student class.
 
 #include <iostream>
 #include <string>
@@ -12,12 +11,14 @@ private:
     int rollNo;
 
 public:
+    // Set student data using this pointer
     void setData(string name, int rollNo)
     {
         this->name = name;
         this->rollNo = rollNo;
     }
 
+    // Display student data
     void display()
     {
         cout << "Student Name : " << this->name << endl;

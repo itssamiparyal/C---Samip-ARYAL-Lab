@@ -1,0 +1,17 @@
+Ram
+Hari
+Sita
+Gita
+Mita
+1
+Hari
+80
+2
+shyam
+49
+1
+hari
+90
+3
+james
+89

@@ -10,7 +10,7 @@ int main()
     float marks;
 
     // Open file for reading
-    ifstream fin("students.txt");
+    ifstream fin("StudentsName.txt");
 
     if (!fin.is_open())
     {

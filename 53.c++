@@ -1,4 +1,5 @@
-//Lab1:Write a C++ program to create a base class Person having data members name and age. Derive a class Student having roll number and semester. Accept and display the complete details of the student.  
+// Lab 1: Program to demonstrate inheritance using Person and Student
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -10,11 +11,10 @@ public:
     string name;
     int age;
 
-    // Function to display person's details
     void displayPerson()
     {
-        cout << "Name : " << name << endl;
-        cout << "Age  : " << age << endl;
+        cout << "Name      : " << name << endl;
+        cout << "Age       : " << age << endl;
     }
 };
 
@@ -25,22 +25,20 @@ public:
     int rollNo;
     int semester;
 
-    // Function to display complete student details
     void displayStudent()
     {
         displayPerson();
 
-        cout << "Roll No : " << rollNo << endl;
-        cout << "Semester: " << semester << endl;
+        cout << "Roll No   : " << rollNo << endl;
+        cout << "Semester  : " << semester << endl;
     }
 };
 
 int main()
 {
-    // Create an object of Student class
     Student s;
 
-    // Accept input
+    // Accept student details
     cout << "Enter Name: ";
     getline(cin, s.name);
 
@@ -53,9 +51,10 @@ int main()
     cout << "Enter Semester: ";
     cin >> s.semester;
 
-    // Display output
+    // Display student details
     cout << "\n---- Student Details ----" << endl;
     s.displayStudent();
 
     return 0;
 }
+

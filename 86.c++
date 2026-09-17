@@ -1,9 +1,10 @@
-//Store Student Records and Display the Student with the Highest Marks
+// Lab: Store Student Records and Display the Student with the Highest Marks
+
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
-// Class to store student details
 class Student
 {
     int rollNo;
@@ -24,21 +25,11 @@ public:
         cin >> marks;
     }
 
-    void writeToFile()
+    void writeToFile(ofstream &fout)
     {
-        ofstream fout("students.txt", ios::app);
-
-        if (!fout.is_open())
-        {
-            cout << "Error opening file!" << endl;
-            return;
-        }
-
         fout << rollNo << endl;
         fout << name << endl;
         fout << marks << endl;
-
-        fout.close();
     }
 
     void display()
@@ -48,9 +39,9 @@ public:
         cout << "Marks = " << marks << endl;
     }
 
-    void findHighest()
+    static void findHighest()
     {
-        ifstream fin("students.txt");
+        ifstream fin("studentHighest.txt");
 
         if (!fin.is_open())
         {
@@ -59,24 +50,34 @@ public:
         }
 
         Student highest;
-        bool first = true;
+        bool found = false;
 
-        while (fin >> rollNo)
+        int r;
+        string n;
+        float m;
+
+        while (fin >> r)
         {
             fin.ignore();
-            getline(fin, name);
-            fin >> marks;
+            getline(fin, n);
+            fin >> m;
 
-            if (first || marks > highest.marks)
+            if (!found || m > highest.marks)
             {
-                highest.rollNo = rollNo;
-                highest.name = name;
-                highest.marks = marks;
-                first = false;
+                highest.rollNo = r;
+                highest.name = n;
+                highest.marks = m;
+                found = true;
             }
         }
 
         fin.close();
+
+        if (!found)
+        {
+            cout << "No student records found!" << endl;
+            return;
+        }
 
         cout << "\nStudent with Highest Marks:" << endl;
         highest.display();
@@ -85,22 +86,37 @@ public:
 
 int main()
 {
-    Student s;
     int n;
 
     cout << "Enter number of students: ";
     cin >> n;
 
-    // Store student records
+    // Create/overwrite studentHighest.txt
+    ofstream fout("studentHighest.txt");
+
+    if (!fout.is_open())
+    {
+        cout << "Error creating file!" << endl;
+        return 1;
+    }
+
+    Student s;
+
     for (int i = 1; i <= n; i++)
     {
         cout << "\nEnter details of Student " << i << ":" << endl;
+
         s.input();
-        s.writeToFile();
+        s.writeToFile(fout);
     }
 
-    // Find and display student with highest marks
-    s.findHighest();
+    fout.close();
+
+    // Find student with highest marks
+    Student::findHighest();
 
     return 0;
 }
+
+
+

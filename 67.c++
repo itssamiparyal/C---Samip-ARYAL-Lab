@@ -1,14 +1,17 @@
-//Lab: Demonstrate abstract class and pure virtual function using SavingAccount and CurrentAccount.
+// Lab: Demonstrate abstract class and pure virtual function
+// using SavingAccount and CurrentAccount.
 
 #include <iostream>
 using namespace std;
 
+// Abstract base class
 class BankAccount
 {
 public:
     virtual void display() = 0;
 };
 
+// Derived class
 class SavingAccount : public BankAccount
 {
 public:
@@ -19,6 +22,7 @@ public:
     }
 };
 
+// Derived class
 class CurrentAccount : public BankAccount
 {
 public:
@@ -46,3 +50,4 @@ int main()
 
     return 0;
 }
+

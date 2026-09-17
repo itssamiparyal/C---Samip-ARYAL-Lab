@@ -1,6 +1,6 @@
-//Lab: Write a C++ program to demonstrate + operator overloading.
-// Create an Add class and use a parameterized constructor to add 
-//two objects.
+//Lab: Write a C++ program to demonstrate + operator 
+//overloading. Create an Add class and use a parameterized 
+//constructor to add two objects.
 
 #include <iostream>
 using namespace std;

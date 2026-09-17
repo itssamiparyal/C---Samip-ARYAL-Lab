@@ -1,4 +1,4 @@
-//Lab:-Write a C++ program to convert a Meter class object into a Centimeter class object. Demonstrate user-defined to user-defined conversion using a conversion constructor.
+//Lab:-Write a C++ program to convert a Meter class object into a Centimeter classm object. Deonstrate user-defined to user-defined conversion using a conversion constructor.
 
 #include <iostream>
 using namespace std;

@@ -1,11 +1,13 @@
-//Class Template to Store and Display Student Details
+// Lab: Class Template to Store and Display Student Details
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-// Class template to store student details
 template <class T>
 class Student
 {
+private:
     T rollNo;
     T marks;
     string name;
@@ -28,10 +30,12 @@ public:
 
 int main()
 {
-    // Using class template with integer data
     Student<int> s1(101, "Ramesh", 85);
 
     s1.display();
 
     return 0;
 }
+
+
+
